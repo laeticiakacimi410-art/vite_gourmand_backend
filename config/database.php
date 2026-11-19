@@ -7,6 +7,12 @@ $username = getenv('MYSQLUSER') ?: 'vite_user';
 $password = getenv('MYSQLPASSWORD') ?: 'Vite1234!';
 $port = getenv('MYSQLPORT') ?: '3306';
 
+// TEST TEMPORAIRE DES VARIABLES RAILWAY
+echo "MYSQLHOST = " . (getenv('MYSQLHOST') ?: 'NON DEFINI') . "\n";
+echo "MYSQLDATABASE = " . (getenv('MYSQLDATABASE') ?: 'NON DEFINI') . "\n";
+
+exit;
+
 try {
     $pdo = new PDO(
         "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4",
