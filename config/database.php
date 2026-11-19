@@ -1,14 +1,15 @@
 
 <?php
 
-$host = 'localhost';
-$dbname = 'vite_gourmand';
-$username = 'vite_user';
-$password = 'Vite1234!';
+$host = getenv('MYSQLHOST') ?: 'localhost';
+$dbname = getenv('MYSQLDATABASE') ?: 'vite_gourmand';
+$username = getenv('MYSQLUSER') ?: 'vite_user';
+$password = getenv('MYSQLPASSWORD') ?: 'Vite1234!';
+$port = getenv('MYSQLPORT') ?: '3306';
 
 try {
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+        "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4",
         $username,
         $password
     );
