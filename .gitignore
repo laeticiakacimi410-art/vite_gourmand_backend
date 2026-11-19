@@ -1,0 +1,6 @@
+.env
+.env.*
+!.env.example
+cookies.txt
+vendor/
+.DS_Store
